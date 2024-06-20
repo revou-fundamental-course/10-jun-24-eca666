@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name=”viewport” content=”width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no” />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="stylesheet" href="css/mainstyle.css">
+    <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Konversi Suhu</title>
+</head>
+
+<body>
+    <!-- header menu-->
+    <header class="topnav" id="myTopnav">
+      <!-- hapus komen ini jika menggunakan menu
+      <a href="#home" class="active">Home</a>
+      <a href="#news">News</a>
+      <a href="#contact">Contact</a>
+      <a href="#about">About</a> -->
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+      <p class="sticky"><marquee direction="right" behavior="alternate" scrollamount="10">Selamat datang di website konversi suhu</marquee></p>
+    </header>
+    <!-- end header menu -->
+    <!-- profil start -->
+    <section class="layout">
+        <section class="image-container">
+            <section class="image">
+                <img src="assets/img/Reza Pict.jpeg" alt="Reza Febbyan Akbar">
+            </section>
+            <section class="info">
+                <h2>Reza Febbyan Akbar</h2>
+                <section class="social_icons">
+                    <a href="https://www.instagram.com/rezaeca13" target="_blank" class="icon"><i
+                            class="uil uil-instagram"></i></a>
+                    <a href="https://www.facebook.com/rezaeca13" target="_blank" class="icon"><i
+                              class="uil uil-facebook"></i></a>
+                    <a href="https://www.linkedin.com/in//reza-febbyan-akbar-507892b4" target="_blank" class="icon"><i
+                            class="uil uil-linkedin-alt"></i></a>
+                    <a href="https://github.com/eca666" target="_blank" class="icon"><i
+                            class="uil uil-github-alt"></i></a>
+                </section>
+            </section>
+        </section>
+        <!-- profil end -->
+
+        <!-- container start -->
+        <section class="container" id="container">
+            <!-- input konversi fahrenheit -->
+            <section class="konversi farenhit">
+                <section class="konversi-suhu">
+                    <h1>Konversi Suhu </h1>
+                    <article>
+                      Masukan suhu derajat (&deg;F) ke kotak bawah, lalu klik tombol Konversi untuk mendapatkan hasil konversi dalam bentuk Farenheit (&deg;C).
+                    </article>
+                    <span>Fahrenheit to Celsius</span>
+                    <input type="number" id="inputSuhuF" placeholder="Masukkan Suhu Fahrenheit">
+                    <span>Hasil Konversi</span>
+                    <textarea name="hasil" id="hasilF" readonly></textarea>
+                    <span>Rumus Konversi</span>
+                    <textarea name="rumus" id="rumusF" readonly></textarea>
+                    <section class="button">
+                        <button onclick="konversiF()">Konversi</button>
+                        <button onclick="resetF()" class="reset">Reset</button>
+                    </section>
+                </section>
+            </section>
+            <!-- end input konversi fahrenheit -->
+
+            <!-- input celcius -->
+            <section class="konversi celcius">
+                <section class="konversi-suhu">
+                    <h1>Konversi Suhu </h1>
+                    <article>
+                      Masukan suhu derajat (&deg;C) ke kotak bawah, lalu klik tombol Konversi untuk mendapatkan hasil konversi dalam bentuk Farenheit (&deg;F).
+                    </article>
+                    <span>Celsius to Fahrenheit</span>
+                    <input type="number" id="inputSuhuC" placeholder="Masukkan Suhu Celsius">
+                    <span>Hasil Konversi</span>
+                    <textarea name="hasil" id="hasilC" readonly></textarea>
+                    <span>Rumus Konversi</span>
+                    <textarea name="rumus" id="rumusC" readonly></textarea>
+                    <section class="button">
+                        <button onclick="konversiC()">Konversi</button>
+                        <button onclick="resetC()" class="reset">Reset</button>
+                    </section>
+                </section>
+            </section>
+            <!-- end input celcius -->
+
+            <!-- toggle start -->
+            <section class="toggle-container">
+                <section class="toggle">
+
+                  <!-- content untuk menampilkan deskripsi rumus kalkulasi Fahrenheit to Celcius -->
+                    <section class="toggle-panel toggle-left">
+                        <h3>Cara Konversi Farenhit Ke Celcius</h3>
+                        <p>Suhu <span class="rumus">S</span> dalam derajat celcius (°C) sama dengan <span
+                                id="kon">S</span> dalam
+                            derajat farenhit (°F) dikurangi 32 dikali 9/5</p>
+                        <p><span class="rumus">S</span><sub>(°F)</sub>= (<span class="rumus">S</span><sub>(°C)</sub> -
+                            32) x 5/9</p>
+                        <p>
+                            Klik tombol Reserve untuk mengkonversi Fahrenheit ke Celcius
+                        </p>
+                        <button class="hidden" id="reverse2">Reverse</button>
+                    </section>
+                    <!-- end content untuk menampilkan deskripsi rumus kalkulasi Fahrenheit to Celcius -->
+
+                    <!-- content untuk menampilkan deskripsi rumus kalkulasi Celcius to Fahrenheit -->
+                    <section class="toggle-panel toggle-right">
+                        <h3>Cara Konversi Celcius Ke Farenhit</h3>
+                        <p>Suhu <span class="rumus">S</span> dalam derajat farenhit (°F) sama dengan <span
+                                id="kon">S</span>
+                            dalam derajat celcius (°C) kali 9/5 tambah 32</p>
+                        <p><span class="rumus">S</span><sub>(°F)</sub>= (<span class="rumus">S</span><sub>(°C)</sub> x
+                            9/5)+32</p>
+                        <p>
+                          Klik tombol Reserve untuk mengkonversi Fahrenheit ke Celcius
+                        </p>
+                        <button class="hidden" id="reverse1">Reverse</button>
+                    </section>
+                    <!-- end content untuk menampilkan deskripsi rumus kalkulasi Celcius to Fahrenheit -->
+                </section>
+            </section>
+            <!-- toggle end -->
+        </section>
+        <!-- container end -->
+
+        <!-- footer -->
+        <footer>
+          <p>Copyright &copy;
+            <script type="text/javascript">
+            new Date().getFullYear()>document.write(new Date().getFullYear());
+            </script>, Develop by Rezaeca13.
+          </p>
+        </footer>
+        <!-- end footer-->
+
+        <!-- untuk load javascript di folder js -->
+        <script src="js/script.js"></script>
+        <!-- end untuk load javascript di folder js -->
+</body>
+
+</html>
